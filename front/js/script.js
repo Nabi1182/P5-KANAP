@@ -1,23 +1,10 @@
-/**
- * 1-- index
- * 		1 Récupérer les produit
- * 		2 construire l'html
- * 		3 injecter l'html dans le dom
- * 			3.1 Pointer sur l'élément items
- * 			3.2 Injecter dans le dom
-
-*/
-
-//Attend que le dom soit entièrement charger
 const start = () => {
 
 	fetch("http://localhost:3000/api/products")
 	.then(result => result.json())
 	.then(data => {
-		console.log(data)
 		let display= ''
 		for(let article of data){
-				//console.log(article)
 			display += `
 				<a href="./product.html?id=${article._id}">
 				<article>
